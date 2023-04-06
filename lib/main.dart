@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:life/screens/load.dart';
-import 'package:life/utilities/hex_color.dart';
+import 'package:life/config/utilities/hex_color.dart';
 
 void main() {
   runApp(const MyApp());

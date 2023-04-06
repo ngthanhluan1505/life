@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:life/utilities/hex_color.dart';
-import 'package:life/utilities/responsive.dart';
-import 'package:life/utilities/style.dart';
+import 'package:life/config/utilities/hex_color.dart';
+import 'package:life/config/utilities/responsive.dart';
+import 'package:life/theme/style.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -44,13 +44,16 @@ class Home extends StatelessWidget {
 
   Widget _notifyItem(String data, BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: () {},
       child: Padding(
         padding: const EdgeInsets.only(top: 2),
         child: Container(
           decoration: BoxStyle.fromBoxDecoration(),
           padding: const EdgeInsets.all(5),
-          child: Text(data, style: const TextStyle(color: Colors.blue, fontSize: 15),),
+          child: Text(
+            data,
+            style: const TextStyle(color: Colors.blue, fontSize: 15),
+          ),
         ),
       ),
     );
@@ -65,18 +68,26 @@ class Home extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
       child: Container(
-        decoration: BoxStyle.fromBoxDecoration(color: HexColor.fromHex('88DDEF')),
-        height: Responsive.height(20, context),
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-          const Text('お知らせ:', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
-          const SizedBox(height: 8,),
-          Expanded(
-            child: ListView(children: listNotify,))
-        ],)
-      ),
+          decoration:
+              BoxStyle.fromBoxDecoration(color: HexColor.fromHex('88DDEF')),
+          height: Responsive.height(20, context),
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text(
+                'お知らせ:',
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Expanded(
+                  child: ListView(
+                children: listNotify,
+              ))
+            ],
+          )),
     );
   }
 
@@ -149,7 +160,7 @@ class Home extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10, bottom: 10),
       child: Container(
         color: HexColor.fromHex('FDD3BC'),
-        child: Column(children: [_myInfo(context),_notify(context)]),
+        child: Column(children: [_myInfo(context), _notify(context)]),
       ),
     ));
     listView.add(_action("マネー",
@@ -165,8 +176,10 @@ class Home extends StatelessWidget {
           _iconAction('lib/assets/images/book.png', '日本語学習', context)
         ],
         context));
-    listView.add(_action("困ったときは",
-        [_iconAction('lib/assets/images/school.png', '通院補助', context)], context));
+    listView.add(_action(
+        "困ったときは",
+        [_iconAction('lib/assets/images/school.png', '通院補助', context)],
+        context));
     listView.add(_action(
         "その他",
         [_iconAction('lib/assets/images/book.png', '日本語検定奨励金', context)],

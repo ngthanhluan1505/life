@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:life/screens/home.dart';
-import 'package:life/utilities/hex_color.dart';
-import 'package:life/utilities/responsive.dart';
+import 'package:life/config/utilities/hex_color.dart';
+import 'package:life/config/utilities/responsive.dart';
+import 'package:life/screens/select_language.dart';
 import 'package:life/widgets/splash_screen.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 
@@ -25,14 +26,14 @@ class LoadApp extends StatelessWidget {
           ),
         ),
         LoadingAnimationWidget.horizontalRotatingDots(
-          color: HexColor.fromHex("EC7508"), 
-          size: Responsive.width(10, context))
+            color: HexColor.fromHex("EC7508"),
+            size: Responsive.width(10, context))
       ],
     );
 
     return SplashScreen(
       mainLogo: mainLogo,
-      nextScreen: const Home(),
+      nextScreen: const SignInPage2(),
       function: () {
         loadingData();
       },

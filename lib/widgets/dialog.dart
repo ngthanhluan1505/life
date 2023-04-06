@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:life/utilities/hex_color.dart';
-import 'package:life/utilities/style.dart';
+import 'package:life/config/utilities/hex_color.dart';
+import 'package:life/theme/style.dart';
 
 extension ShowingDialog on Dialog {
   static showingDialog({
